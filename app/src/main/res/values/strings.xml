@@ -1,0 +1,11 @@
+<resources>
+    <string name="darcy_app_name">ComposeDemo</string>
+    <string name="darcy_click_me">点击1</string>
+    <string name="darcy_click_me2">点击2</string>
+    <string name="darcy_chat_list">聊天列表</string>
+    <string name="darcy_chat_detail">聊天页</string>
+    <string name="darcy_chat_settings">聊天设置</string>
+    <string name="darcy_click_count">点击次数: %1$d</string>
+    <string name="darcy_click_count_inc">点击+1</string>
+    <string name="darcy_go_detail_page">详情页</string>
+</resources>

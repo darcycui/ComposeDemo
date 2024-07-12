@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/darcy_app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/darcy_Theme.ComposeDemo"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.test.TestComposeBuildActivity"
+            android:exported="false"
+            android:theme="@style/darcy_Theme.ComposeDemo" />
+        <activity
+            android:name=".ui.pages.sample.SwitchActivity"
+            android:exported="false"
+            android:theme="@style/darcy_Theme.ComposeDemo" />
+        <activity
+            android:name=".ui.pages.view.ComposeActivity"
+            android:exported="false"
+            android:theme="@style/darcy_Theme.ComposeDemo" />
+        <activity
+            android:name=".ui.pages.view.ViewActivity"
+            android:exported="false"
+            android:theme="@style/darcy_AppCompat" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/darcy_app_name"
+            android:theme="@style/darcy_Theme.ComposeDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.pages.sample.ImageViewActivity" />
+        <activity android:name=".ui.pages.sample.ConstraintLayoutActivity" />
+        <activity android:name=".ui.pages.sample.FrameLayoutActivity" />
+        <activity android:name=".ui.pages.sample.LinearLayoutActivity" />
+        <activity android:name=".ui.pages.sample.RecyclerViewActivity" />
+        <activity android:name=".ui.pages.sample.RelativeLayoutActivity" />
+        <activity android:name=".ui.pages.sample.TextViewActivity" />
+        <activity android:name=".ui.pages.sample.ViewPagerActivity" />
+        <activity android:name="com.darcy.message.composedemo.ui.pages.chat.ChatListActivity" />
+    </application>
+
+</manifest>
