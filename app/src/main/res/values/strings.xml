@@ -8,4 +8,5 @@
     <string name="darcy_click_count">点击次数: %1$d</string>
     <string name="darcy_click_count_inc">点击+1</string>
     <string name="darcy_go_detail_page">详情页</string>
+    <string name="title_activity_learn">LearnActivity</string>
 </resources>
