@@ -23,7 +23,7 @@ import com.darcy.message.composedemo.navigation.DarcyApp
 import com.darcy.message.composedemo.navigation.Screen
 import com.darcy.message.composedemo.ui.pages.view.ComposeActivity
 import com.darcy.message.composedemo.ui.pages.view.ViewActivity
-import com.darcy.message.composedemo.ui.test.TestComposeBuildActivity
+import com.darcy.message.composedemo.ui.test.viewapplier.TestComposeBuildActivity
 import com.darcy.message.composedemo.ui.theme.ComposeDemoTheme
 
 class MainActivity : ComponentActivity() {

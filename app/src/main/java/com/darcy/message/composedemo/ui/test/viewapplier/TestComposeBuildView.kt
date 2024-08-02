@@ -1,4 +1,4 @@
-package com.darcy.message.composedemo.ui.test
+package com.darcy.message.composedemo.ui.test.viewapplier
 
 import android.view.View
 import android.view.ViewGroup
