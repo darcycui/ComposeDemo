@@ -6,7 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,6 +33,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.darcy.message.composedemo.R
 import com.darcy.message.composedemo.learn.ui.theme.ComposeDemoTheme
+import com.darcy.message.composedemo.learn.widgets.HomeButton
+import com.darcy.message.composedemo.learn.widgets.HomeCard
+import com.darcy.message.composedemo.learn.widgets.HomeDialog
+import com.darcy.message.composedemo.learn.widgets.HomeFloatingActionButton
+import com.darcy.message.composedemo.learn.widgets.HomeIcon
+import com.darcy.message.composedemo.learn.widgets.HomeIconButtons
+import com.darcy.message.composedemo.learn.widgets.HomeImage
+import com.darcy.message.composedemo.learn.widgets.HomeIndicator
+import com.darcy.message.composedemo.learn.widgets.HomeSlider
+import com.darcy.message.composedemo.learn.widgets.HomeText
+import com.darcy.message.composedemo.learn.widgets.HomeTextField
 
 class LearnActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +64,7 @@ class LearnActivity : ComponentActivity() {
 
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ShowHomeContent(innerPadding: PaddingValues = PaddingValues.Absolute()) {
     val showListPage = remember {
@@ -59,23 +74,147 @@ fun ShowHomeContent(innerPadding: PaddingValues = PaddingValues.Absolute()) {
         ConversationPreview()
         return
     }
-    MessageCard(
-        message = Message(
-            "Tom&Jerry",
-            "Welcome to our museum.\nWelcome to our museum."
-        ),
-        modifier = Modifier.padding(innerPadding)
-    )
+    val showHomeDialog = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeDialog.value) {
+        HomeDialog()
+        return
+    }
+    val showHomeButton = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeButton.value) {
+        HomeButton()
+        return
+    }
+    val showHomeCard = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeCard.value) {
+        HomeCard()
+        return
+    }
+    val showHomeFAB = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeFAB.value) {
+        HomeFloatingActionButton()
+        return
+    }
+    val showHomeIcon = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeIcon.value) {
+        HomeIcon()
+        return
+    }
+    val showHomeIconButton = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeIconButton.value) {
+        HomeIconButtons()
+        return
+    }
+    val showHomeImage = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeImage.value) {
+        HomeImage()
+        return
+    }
+    val showHomeSlider = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeSlider.value) {
+        HomeSlider()
+        return
+    }
+    val showHomeIndicator = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeIndicator.value) {
+        HomeIndicator()
+        return
+    }
+    val showHomeText = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeText.value) {
+        HomeText()
+        return
+    }
+    val showHomeTextField = remember {
+        mutableStateOf(false)
+    }
+    if (showHomeTextField.value) {
+        HomeTextField()
+        return
+    }
+    Column {
 
-    Spacer(modifier = Modifier.size(4.dp))
-    /**
-     * 按钮控件
-     */
-    Button(onClick = {
-        // 改变状态的值, 从而触发Compose函数的重绘(刷新UI)
-        showListPage.value = !showListPage.value
-    }) {
-        Text(text = "详情列表")
+        MessageCard(
+            message = Message(
+                "Tom&Jerry",
+                "Welcome to our museum.\nWelcome to our museum."
+            ),
+            modifier = Modifier.padding(innerPadding)
+        )
+
+        Spacer(modifier = Modifier.size(4.dp))
+
+        // 自动换行的Row
+        FlowRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+
+            /**
+             * 按钮控件
+             */
+            /**
+             * 按钮控件
+             */
+            Button(onClick = {
+                // 改变状态的值, 从而触发Compose函数的重绘(刷新UI)
+                showListPage.value = showListPage.value.not()
+            }) {
+                Text(text = "详情列表")
+            }
+            Button(onClick = { showHomeDialog.value = showHomeDialog.value.not() }) {
+                Text(text = "弹窗")
+            }
+            Button(onClick = { showHomeButton.value = showHomeButton.value.not() }) {
+                Text(text = "按钮")
+            }
+            Button(onClick = { showHomeCard.value = showHomeCard.value.not() }) {
+                Text(text = "卡片")
+            }
+            Button(onClick = { showHomeFAB.value = showHomeFAB.value.not() }) {
+                Text(text = "FAB")
+            }
+            Button(onClick = { showHomeIcon.value = showHomeIcon.value.not() }) {
+                Text(text = "小图标")
+            }
+            Button(onClick = { showHomeIconButton.value = showHomeIconButton.value.not() }) {
+                Text(text = "小图标(可点击)")
+            }
+            Button(onClick = { showHomeImage.value = showHomeImage.value.not() }) {
+                Text(text = "图片")
+            }
+            Button(onClick = { showHomeSlider.value = showHomeSlider.value.not() }) {
+                Text(text = "拖动条")
+            }
+            Button(onClick = { showHomeIndicator.value = showHomeIndicator.value.not() }) {
+                Text(text = "进度条")
+            }
+            Button(onClick = { showHomeText.value = showHomeText.value.not() }) {
+                Text(text = "文本相关")
+            }
+            Button(onClick = { showHomeTextField.value = showHomeTextField.value.not() }) {
+                Text(text = "输入框")
+            }
+        }
     }
 }
 
@@ -190,7 +329,8 @@ fun MessageCardPreview() {
      * 设置主题
      */
     ComposeDemoTheme {
-        MessageCard(Message("Jetpack Compose 博物馆", "我们开始更新啦"))
+        ShowHomeContent()
+//        MessageCard(Message("Jetpack Compose 博物馆", "我们开始更新啦"))
     }
 }
 

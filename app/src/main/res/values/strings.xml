@@ -8,5 +8,8 @@
     <string name="darcy_click_count">点击次数: %1$d</string>
     <string name="darcy_click_count_inc">点击+1</string>
     <string name="darcy_go_detail_page">详情页</string>
-    <string name="title_activity_learn">LearnActivity</string>
+    <string name="darcy_title_activity_learn">LearnActivity</string>
+    <string name="darcy_content">桃之夭夭，灼灼其华。之子于归，宜其室家。</string>
+    <string name="darcy_title">你好呀陌生人，这是一个标题</string>
+    <string name="darcy_detail">你好呀陌生人，我是内容</string>
 </resources>

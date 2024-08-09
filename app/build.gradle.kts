@@ -87,4 +87,6 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     // Compose页面导航
     implementation(libs.androidx.navigation.compose)
+    // Coil图片库
+    implementation(libs.coil.compose)
 }
