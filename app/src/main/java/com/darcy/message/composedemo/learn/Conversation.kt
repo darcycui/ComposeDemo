@@ -4,20 +4,36 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.tooling.preview.Preview
+import com.darcy.message.composedemo.exts.logD
+import com.darcy.message.composedemo.exts.logE
+import com.darcy.message.composedemo.exts.logI
+import com.darcy.message.composedemo.learn.widgets.HomeImage
 
 @Composable
 fun Conversation(messages: List<Message>) {
-    val showHomePage = remember {
+    val showHomePage = rememberSaveable {
         mutableStateOf(false)
     }
     if (showHomePage.value) {
         ShowHomeContent()
+        return
+    }
+    val showNextPage = rememberSaveable {
+        mutableStateOf(false)
+    }
+    if (showNextPage.value) {
+        HomeImage()
         return
     }
 
@@ -37,8 +53,26 @@ fun Conversation(messages: List<Message>) {
             }) {
                 Text(text = "上一页")
             }
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { showNextPage.value = !showNextPage.value }) {
                 Text(text = "下一页")
+            }
+            Button(onClick = { /* todo*/ }) {
+                Text(text = "重绘")
+            }
+        }
+
+        // TODO 只首次绘制的时候执行一次
+        LaunchedEffect(Unit) {
+            logI("LaunchedEffect: INIT items: ${messages.size}")
+        }
+        // TODO 每次绘制的时候都会执行
+        SideEffect {
+            logD("SideEffect: UPDATE")
+        }
+        // TODO 只销毁的时候执行一次
+        DisposableEffect(Unit) {
+            onDispose {
+                logE("DisposableEffect: REMOVE")
             }
         }
         /**
@@ -48,8 +82,13 @@ fun Conversation(messages: List<Message>) {
             /**
              * 列表item
              */
-            items(messages.size) { index ->
-                MessageCard(message = messages[index])
+//            items(messages.size) { index ->
+//                logD("items index: $index")
+//                MessageCard(message = messages[index])
+//            }
+            itemsIndexed(messages) { index, item ->
+                logD("itemsIndexed index: $index item=$item")
+                MessageCard(message = item)
             }
         }
     }
@@ -87,6 +126,14 @@ fun ConversationPreview() {
             Message(
                 author,
                 "莫笑农家腊酒浑，丰年留客足鸡豚。山重水复疑无路，柳暗花明又一村。箫鼓追随春社近，衣冠简朴古风存。从今若许闲乘月，拄杖无时夜叩门"
+            ),
+            Message(
+                author,
+                "把酒问月 青天有月来几时 我今停杯一问之 人攀明月不可得 月行却与人相随 皎如飞临临丹阙 绿烟灭尽清辉发 但见宵从海上来 宁知晓向云间没 白兔捣药秋复春 嫦娥孤栖与谁邻 今人不见古时月 今月曾经照古人 "
+            ),
+            Message(
+                author,
+                "春江花月夜 春江潮水连海平 海上明月共潮生 滟滟随波千万里 何处春江无月明 江流宛转绕芳甸 月照花林皆似霰 空里流霜不觉飞 汀上白沙看不见 江天一色无纤尘 皎皎空中孤月轮 江畔何人初见月 江月何年初照人 人生代代无穷已 江月年年望相似 不知江月待何人 但见长江送流水"
             )
         )
     )

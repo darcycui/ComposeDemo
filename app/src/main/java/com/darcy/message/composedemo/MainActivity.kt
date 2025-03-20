@@ -19,8 +19,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.darcy.message.composedemo.exts.startPage
+import com.darcy.message.composedemo.learn.LearnActivity
 import com.darcy.message.composedemo.navigation.DarcyApp
 import com.darcy.message.composedemo.navigation.Screen
+import com.darcy.message.composedemo.ui.pages.login.LoginActivity
 import com.darcy.message.composedemo.ui.pages.view.ComposeActivity
 import com.darcy.message.composedemo.ui.pages.view.ViewActivity
 import com.darcy.message.composedemo.ui.test.viewapplier.TestComposeBuildActivity
@@ -60,7 +62,7 @@ fun MainShow(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(color = Color.Green),
+            .background(color = Color.LightGray),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start
     ) {
@@ -124,10 +126,16 @@ fun MainShow(
                 text = "ComposeWithViewPage-",
             )
         }
-        Button(onClick = { context.startPage(TestComposeBuildActivity::class.java) }) {
-            Text(
-                text = "Test Compose Build View",
-            )
+//        Button(onClick = { context.startPage(TestComposeBuildActivity::class.java) }) {
+//            Text(
+//                text = "Test Compose Build View",
+//            )
+//        }
+        Button(onClick = { context.startPage(LearnActivity::class.java) }) {
+            Text(text = "LearnViewModel")
+        }
+        Button(onClick = { context.startPage(LoginActivity::class.java) }) {
+            Text(text = "LoginViewModel")
         }
     }
 }

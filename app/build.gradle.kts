@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.darcy.message.composedemo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.darcy.message.composedemo"
@@ -46,7 +46,7 @@ android {
         viewBinding = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {

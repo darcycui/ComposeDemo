@@ -6,6 +6,7 @@ interface IUiIntent {
 }
 
 
-sealed class LogInUiIntent : IUiIntent {}
-data class LoginIntent(val userBean: UserBean) : LogInUiIntent()
-data class LogoutIntent(val userBean: UserBean) : LogInUiIntent()
+sealed class LogInUiIntent : IUiIntent {
+    data class LoginIntent(val userBean: UserBean) : LogInUiIntent()
+    data class LogoutIntent(val userBean: UserBean) : LogInUiIntent()
+}

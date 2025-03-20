@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.darcy.message.composedemo.R
+import com.darcy.message.composedemo.learn.ConversationPreview
 import com.darcy.message.composedemo.learn.ShowHomeContent
 
 @Preview(showBackground = true)
@@ -29,7 +30,8 @@ fun HomeImage() {
         mutableStateOf(false)
     }
     if (showHomePage.value) {
-        ShowHomeContent()
+//        ShowHomeContent()
+        ConversationPreview()
         return
     }
     BackHandler {

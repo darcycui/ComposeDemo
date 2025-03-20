@@ -12,4 +12,5 @@
     <string name="darcy_content">桃之夭夭，灼灼其华。之子于归，宜其室家。</string>
     <string name="darcy_title">你好呀陌生人，这是一个标题</string>
     <string name="darcy_detail">你好呀陌生人，我是内容</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
