@@ -98,12 +98,12 @@ fun GreetingLogin(name: String, modifier: Modifier = Modifier, viewmodel: LoginV
         Button(onClick = {
             viewmodel?.sendUiIntent(LogInUiIntent.LoginIntent(UserBean(-1L, username.value, password.value)))
         }) {
-            Text(text = "DEFAULT")
+            Text(text = "Login")
         }
         Button(onClick = {
             viewmodel?.sendUiIntent(LogInUiIntent.LogoutIntent(UserBean(-1L, username.value, password.value)))
         }) {
-            Text(text = "DEFAULT")
+            Text(text = "Logout")
         }
     }
 }

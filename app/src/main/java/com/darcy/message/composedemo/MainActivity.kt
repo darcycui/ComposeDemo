@@ -22,10 +22,10 @@ import com.darcy.message.composedemo.exts.startPage
 import com.darcy.message.composedemo.learn.LearnActivity
 import com.darcy.message.composedemo.navigation.DarcyApp
 import com.darcy.message.composedemo.navigation.Screen
+import com.darcy.message.composedemo.ui.pages.health.ui.HealthActivity
 import com.darcy.message.composedemo.ui.pages.login.LoginActivity
 import com.darcy.message.composedemo.ui.pages.view.ComposeActivity
 import com.darcy.message.composedemo.ui.pages.view.ViewActivity
-import com.darcy.message.composedemo.ui.test.viewapplier.TestComposeBuildActivity
 import com.darcy.message.composedemo.ui.theme.ComposeDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -136,6 +136,9 @@ fun MainShow(
         }
         Button(onClick = { context.startPage(LoginActivity::class.java) }) {
             Text(text = "LoginViewModel")
+        }
+        Button(onClick = { context.startPage(HealthActivity::class.java) }) {
+            Text(text = "HealthActivity")
         }
     }
 }
