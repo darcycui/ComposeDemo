@@ -16,7 +16,8 @@ fun WellnessTasksList(
     LazyColumn(
         modifier = modifier
     ) {
-        items(list) { task ->
+        // TODO 使用 key 标记数据源与 UI 元素的对应关系，在数据源发生增、删时，UI元素可以复用
+        items(list, key = { task -> task.id }) { task ->
             WellnessTaskItem(
                 taskName = task.label,
                 checked = task.checked,
