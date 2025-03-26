@@ -7,6 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -51,6 +53,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun MainShow(
     name: String,
@@ -59,51 +62,47 @@ fun MainShow(
 ) {
     // 获取context上下文
     val context = LocalContext.current
-    Column(
+
+    FlowRow(
         modifier = modifier
             .fillMaxSize()
             .background(color = Color.LightGray),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.Start
+        verticalArrangement = Arrangement.Top,
+        horizontalArrangement = Arrangement.Start
     ) {
-        Button(onClick = { onNextButtonClicked(Screen.TextView.name) }) {
-            Text(
-                text = "TextViewPage",
-            )
-        }
         Button(onClick = { onNextButtonClicked(Screen.ImageView.name) }) {
             Text(
-                text = "ImageViewPage",
+                text = "ImageView",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.LinearLayout.name) }) {
             Text(
-                text = "LinearLayoutPage",
+                text = "LinearLayout",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.FrameLayout.name) }) {
             Text(
-                text = "FrameLayoutPage",
+                text = "FrameLayout",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.RelativeLayout.name) }) {
             Text(
-                text = "RelativeLayoutPage",
+                text = "RelativeLayout",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.ConstraintLayout.name) }) {
             Text(
-                text = "ConstraintLayoutPage",
+                text = "ConstraintLayout",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.RecyclerView.name) }) {
             Text(
-                text = "RecyclerViewPage",
+                text = "RecyclerView",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.ViewPager.name) }) {
             Text(
-                text = "ViewPagerPage",
+                text = "ViewPager",
             )
         }
         Button(onClick = { onNextButtonClicked(Screen.Switch.name) }) {
@@ -113,17 +112,17 @@ fun MainShow(
         }
         Button(onClick = { onNextButtonClicked(Screen.ChatList.name) }) {
             Text(
-                text = "Test MultiComposeFunction Change",
+                text = "MultiComposeFunction",
             )
         }
         Button(onClick = { context.startPage(ViewActivity::class.java) }) {
             Text(
-                text = "ViewWithComposePage+",
+                text = "ViewWithCompose",
             )
         }
         Button(onClick = { context.startPage(ComposeActivity::class.java) }) {
             Text(
-                text = "ComposeWithViewPage-",
+                text = "ComposeWithView",
             )
         }
 //        Button(onClick = { context.startPage(TestComposeBuildActivity::class.java) }) {
@@ -138,6 +137,9 @@ fun MainShow(
             Text(text = "LoginViewModel")
         }
         Button(onClick = { context.startPage(HealthActivity::class.java) }) {
+            Text(text = "HealthActivity")
+        }
+        Button(onClick = { context.startPage(ToDoListActivity::class.java) }) {
             Text(text = "HealthActivity")
         }
     }

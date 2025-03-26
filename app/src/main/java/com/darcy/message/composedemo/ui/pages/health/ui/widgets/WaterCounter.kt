@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,11 +35,11 @@ import androidx.compose.ui.unit.dp
 fun WaterCounterTest(modifier: Modifier = commonModifier) {
 
     Column(modifier = modifier.padding(16.dp)) {
-        // TODO 使用 remember{mutableStateOf()} 初始化状态
-//        val count: MutableState<Int> = remember { mutableStateOf(0) }
-        // TODO 状态可以使用 by 属性委托初始化
+        // TODO 使用 mutableStateOf()初始化可变状态, 使用 remember 在重组后保留状态
+        // val count: MutableState<Int> = remember { mutableStateOf(0) }
+        // 状态可以使用 by 属性委托初始化
         var count by remember { mutableStateOf(0) }
-        // TODO 状态可以存储在ViewModel的LiveData/StateFlow里 待拓展
+        // 状态可以存储在ViewModel的LiveData/StateFlow里 待拓展
 
 
         if (count > 0) {
@@ -72,9 +73,9 @@ fun WaterCounterTest(modifier: Modifier = commonModifier) {
 @Composable
 fun WaterCounter(modifier: Modifier = commonModifier) {
     Column(modifier = modifier.padding(16.dp)) {
-        // TODO 在重组后保存状态
+        // TODO remember 在重组后保留状态
 //        var count by remember { mutableStateOf(0) }
-        // TODO 旋转屏幕等配置修改后仍能状态
+        // TODO rememberSaveable 在重组后保留状态 且 在配置修改（旋转屏幕）后仍能保留
         var count by rememberSaveable { mutableStateOf(0) }
         if (count > 0) {
             Text("You've had $count glasses.")

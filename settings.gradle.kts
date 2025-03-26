@@ -9,6 +9,9 @@ pluginManagement {
         maven {
             setUrl("https://maven.aliyun.com/repository/jcenter")
         }
+        maven {
+            setUrl("https://maven.aliyun.com/repository/gradle-plugin")
+        }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -19,9 +22,6 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven {
-            setUrl("https://maven.aliyun.com/repository/gradle-plugin")
-        }
     }
 }
 dependencyResolutionManagement {
@@ -35,6 +35,9 @@ dependencyResolutionManagement {
         }
         maven {
             setUrl("https://maven.aliyun.com/repository/jcenter")
+        }
+        maven {
+            setUrl("https://maven.aliyun.com/repository/gradle-plugin")
         }
         google()
         mavenCentral()
