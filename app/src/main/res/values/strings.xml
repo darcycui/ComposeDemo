@@ -14,4 +14,5 @@
     <string name="darcy_detail">你好呀陌生人，我是内容</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_health">HealthActivity</string>
+    <string name="title_activity_to_do_list">ToDoListActivity</string>
 </resources>

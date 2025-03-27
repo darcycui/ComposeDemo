@@ -26,6 +26,7 @@ import com.darcy.message.composedemo.navigation.DarcyApp
 import com.darcy.message.composedemo.navigation.Screen
 import com.darcy.message.composedemo.ui.pages.health.ui.HealthActivity
 import com.darcy.message.composedemo.ui.pages.login.LoginActivity
+import com.darcy.message.composedemo.ui.pages.todolist.ToDoListActivity
 import com.darcy.message.composedemo.ui.pages.view.ComposeActivity
 import com.darcy.message.composedemo.ui.pages.view.ViewActivity
 import com.darcy.message.composedemo.ui.theme.ComposeDemoTheme
@@ -140,7 +141,7 @@ fun MainShow(
             Text(text = "HealthActivity")
         }
         Button(onClick = { context.startPage(ToDoListActivity::class.java) }) {
-            Text(text = "HealthActivity")
+            Text(text = "ToDoListActivity")
         }
     }
 }
