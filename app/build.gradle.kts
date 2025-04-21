@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    // Compose插件
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -41,13 +43,18 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+//    kotlin {
+//        compileOptions {
+//            targetCompatibility = JavaVersion.VERSION_11
+//        }
+//    }
     buildFeatures {
         compose = true
         viewBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = "1.5.15"
+//    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
