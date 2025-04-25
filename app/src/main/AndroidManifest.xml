@@ -18,17 +18,17 @@
         <activity
             android:name=".ui.pages.todolist.ToDoListActivity"
             android:exported="false"
-            android:label="@string/title_activity_to_do_list"
+            android:label="@string/darcy_title_activity_to_do_list"
             android:theme="@style/darcy_Theme.ComposeDemo" />
         <activity
             android:name=".ui.pages.health.ui.HealthActivity"
             android:exported="false"
-            android:label="@string/title_activity_health"
+            android:label="@string/darcy_title_activity_health"
             android:theme="@style/darcy_Theme.ComposeDemo" />
         <activity
             android:name=".ui.pages.login.LoginActivity"
             android:exported="false"
-            android:label="@string/title_activity_login"
+            android:label="@string/darcy_title_activity_login"
             android:theme="@style/darcy_Theme.ComposeDemo" />
         <activity
             android:name=".learn.LearnActivity"
